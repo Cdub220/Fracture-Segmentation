@@ -1,0 +1,15 @@
+import cv2
+
+def edgedetection(Input, Output):
+
+    img = cv2.imread(Input, 0)
+    canny = cv2.Canny(img, 100, 200)
+
+    cv2.imwrite(Output, canny)
+
+    
+
+if __name__ == "__main__":
+    Output = "data/crack/edges/presentation.jpg"
+    Input = "data/crack/imgs/20160328_153533_1281_1.jpg"
+    edgedetection(Input, Output)
